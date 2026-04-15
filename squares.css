@@ -5,13 +5,13 @@
     position: relative;
     margin-bottom: 10px;
 }
-#myfirstsquare{
+.square{
     width: 50px;
     height: 50px;
     border: 2px solid black ;
     position: absolute;
-    background-color: red;
+    /*background-color: red;
     top: 0px;
-    left: 0px;
+    left: 0px;*/
     
 }
