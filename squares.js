@@ -33,15 +33,16 @@ function addSquare() {
 document.querySelector("#addBtn").onclick = addSquare;
 
 
-document.querySelector("#colorBtn").onclick = function () {
+function changeColors() {
 
     let squares = document.querySelectorAll(".square");
 
     for (let i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = randomColor();
     }
-};
+}
 
+document.querySelector("#colorBtn").onclick = changeColors;
 
 
 function randomColor() {
