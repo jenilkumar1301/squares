@@ -13,6 +13,11 @@ function addSquare() {
     let square = document.createElement("div");
     square.className = "square";
 
+    let size = parseInt(Math.random() * 11) + 45;
+
+square.style.width = size + "px";
+square.style.height = size + "px";
+
     square.style.left = parseInt(Math.random() * 650) + "px";
     square.style.top = parseInt(Math.random() * 250) + "px";
 
