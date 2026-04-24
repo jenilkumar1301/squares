@@ -1,22 +1,56 @@
-let squarearea = document.querySelector("squarearea");
+let squareArea = document.querySelector("#squarearea");
 
- let squarecount = parseint(math.random() * 21)+30;
+let squareCount = parseInt(Math.random() * 21) + 30;
 
- for (let i = 0; i < squarecount; i++) {
-     let square = document.createElement("div");
-     square.className = "square";
-     square.style.top =  parseint(math.random()) * 6500 + "px";
-     square.style.left = parseint(math.random()) * 250 + "px";
-     square.style.backgroundColor = randomcolor();
-     squarearea.append(square);
- }
+for (let i = 0; i < squareCount; i++) {
 
- function randomcolor() {
-     
+    let square = document.createElement("div");
+    square.className = "square";
+
+    square.style.left = parseInt(Math.random() * 650) + "px";
+    square.style.top = parseInt(Math.random() * 250) + "px";
+
+    square.style.backgroundColor = randomColor();
+
+    squareArea.append(square);
+}
+
+
+
+function addSquare() {
+
+    let square = document.createElement("div");
+    square.className = "square";
+
+    square.style.left = parseInt(Math.random() * 650) + "px";
+    square.style.top = parseInt(Math.random() * 250) + "px";
+
+    square.style.backgroundColor = randomColor();
+
+    squareArea.append(square);
+}
+
+document.querySelector("#addBtn").onclick = addSquare;
+
+
+document.querySelector("#colorBtn").onclick = function () {
+
+    let squares = document.querySelectorAll(".square");
+
+    for (let i = 0; i < squares.length; i++) {
+        squares[i].style.backgroundColor = randomColor();
+    }
+};
+
+
+
+function randomColor() {
     let letters = "0123456789abcdef";
     let color = "#";
+
     for (let i = 0; i < 6; i++) {
-        color += letters.charAt(parseInt(math.random() * letters.length));
+        color += letters.charAt(parseInt(Math.random() * letters.length));
     }
+
     return color;
- }
+}
