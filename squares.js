@@ -1,4 +1,5 @@
 let squareArea = document.querySelector("#squarearea");
+let topIndex = 1;
 
 let squareCount = parseInt(Math.random() * 21) + 30;
 
@@ -17,7 +18,16 @@ function addSquare() {
 
     square.style.backgroundColor = randomColor();
 
-    squareArea.append(square);
+square.onclick = function () {
+    if (parseInt(square.style.zIndex) === topIndex) {
+        square.remove();
+    } else {
+        topIndex++;
+        square.style.zIndex = topIndex;
+    }
+};
+
+squareArea.append(square);
 }
 
 document.querySelector("#addBtn").onclick = addSquare;
